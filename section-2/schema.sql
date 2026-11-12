@@ -30,7 +30,8 @@ CREATE TABLE tasks (
 
 CREATE TABLE audit_log (
   id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-  task_id BIGINT NOT NULL REFERENCES tasks(id) ON DELETE CASCADE,
+  -- Keep the original identifier after task deletion so audit history survives.
+  task_id BIGINT NOT NULL,
   user_id BIGINT NOT NULL REFERENCES users(id) ON DELETE RESTRICT,
   action VARCHAR(80) NOT NULL,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
