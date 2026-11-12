@@ -34,7 +34,7 @@ npm run dev
 
 ## โครงสร้าง
 
-- `section-1/flowchart.mmd` — Flowchart รูปแบบ Mermaid
+- `section-1/flowchart.md` — Flowchart รูปแบบ Mermaid
 - `section-1/DECISIONS.md` — เหตุผลการตัดสินใจ 5 ข้อและการใช้ AI
 - `section-2/schema.sql` — Schema PostgreSQL พร้อม constraint และ index
 - `section-3/` — React/Vite web app ใช้ Mock Data; ไม่มี backend หรือฐานข้อมูลจริง
@@ -43,4 +43,4 @@ npm run dev
 
 ## เปิดดู Flowchart
 
-ไฟล์ `section-1/flowchart.mmd` เป็น Mermaid. หาก Markdown viewer รองรับ Mermaid สามารถเปิดดูได้โดยตรง; ใน GitHub, วางเนื้อหาใน Markdown fence `mermaid` เพื่อแสดงแผนภาพ.
+ไฟล์ `section-1/flowchart.md` เป็น Mermaid. หาก Markdown viewer รองรับ Mermaid สามารถเปิดดูได้โดยตรง; ใน GitHub, วางเนื้อหาใน Markdown fence `mermaid` เพื่อแสดงแผนภาพ.

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { api } from '../lib/api';
 import { useAuth } from '../context/AuthContext';
 
@@ -10,13 +10,12 @@ export default function EmployeeTasks() {
   const [refreshing, setRefreshing] = useState(false);
   const [pendingIds, setPendingIds] = useState(() => new Set());
   const [error, setError] = useState('');
-  const inFlight = useRef(false);
-
   useEffect(() => {
     let active = true;
+    let inFlight = false;
     const refresh = async (initial = false) => {
-      if (inFlight.current) return;
-      inFlight.current = true;
+      if (inFlight) return;
+      inFlight = true;
       if (initial) setLoading(true);
       else setRefreshing(true);
       try {
@@ -28,7 +27,7 @@ export default function EmployeeTasks() {
       } catch (err) {
         if (active) setError('โหลดรายการ Task ไม่สำเร็จ กรุณาลองใหม่');
       } finally {
-        inFlight.current = false;
+        inFlight = false;
         if (active) { setLoading(false); setRefreshing(false); }
       }
     };

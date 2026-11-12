@@ -42,7 +42,7 @@ function LoginPage() {
       {error && <p className="alert error" role="alert">{error}</p>}
       <button className="primary" disabled={loading}>{loading ? 'กำลังตรวจสอบ…' : 'เข้าสู่ระบบ'}</button>
     </form>
-    <p className="hint">ทดสอบ error ได้โดยเลือก “ระบุชื่อเอง” และใส่ชื่อที่ไม่มีในระบบ</p>
+    <p className="hint">ทดสอบกรณี error ได้โดยเลือก “บัญชีทดสอบ error” แล้วกดเข้าสู่ระบบ</p>
   </main>;
 }
 
